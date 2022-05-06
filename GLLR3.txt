@@ -1,0 +1,60 @@
+> men = subset(framingham, male == "1")
+> women = subset(framingham, male == "0")
+> 
+> 
+> 
+> 
+> male_model <- glm(TenYearCHD ~ totChol +
++                             age + 
++                             education + 
++                             currentSmoker + 
++                             cigsPerDay + 
++                             BPMeds + 
++                             prevalentStroke + 
++                             prevalentHyp + 
++                             diabetes + 
++                             sysBP + 
++                             diaBP + 
++                             BMI + 
++                             heartRate + 
++                             glucose 
++                           , men, family = "binomial")
+> summary(male_model)
+
+Call:
+glm(formula = TenYearCHD ~ totChol + age + education + currentSmoker + 
+    cigsPerDay + BPMeds + prevalentStroke + prevalentHyp + diabetes + 
+    sysBP + diaBP + BMI + heartRate + glucose, family = "binomial", 
+    data = men)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-2.0817  -0.6512  -0.4835  -0.3311   2.5466  
+
+Coefficients:
+                  Estimate Std. Error z value Pr(>|z|)    
+(Intercept)     -9.2732381  1.0744444  -8.631  < 2e-16 ***
+totChol          0.0040998  0.0016365   2.505 0.012237 *  
+age              0.0654169  0.0088941   7.355 1.91e-13 ***
+education        0.0176845  0.0629974   0.281 0.778927    
+currentSmoker    0.1931142  0.2236393   0.864 0.387859    
+cigsPerDay       0.0128687  0.0075921   1.695 0.090074 .  
+BPMeds           0.1913407  0.4077267   0.469 0.638865    
+prevalentStroke  0.8778872  0.7333713   1.197 0.231284    
+prevalentHyp     0.0242587  0.1919037   0.126 0.899407    
+diabetes         0.3221108  0.4319721   0.746 0.455864    
+sysBP            0.0217268  0.0059282   3.665 0.000247 ***
+diaBP           -0.0036281  0.0093359  -0.389 0.697559    
+BMI             -0.0009446  0.0213983  -0.044 0.964790    
+heartRate        0.0003514  0.0060075   0.058 0.953359    
+glucose          0.0064379  0.0031823   2.023 0.043069 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1574.3  on 1622  degrees of freedom
+Residual deviance: 1401.8  on 1608  degrees of freedom
+AIC: 1431.8
+
+Number of Fisher Scoring iterations: 5

@@ -1,0 +1,38 @@
+Call:
+glm(formula = TenYearCHD ~ totChol + male + age + education + 
+    currentSmoker + cigsPerDay + BPMeds + prevalentStroke + prevalentHyp + 
+    diabetes + sysBP + diaBP + BMI + heartRate + glucose, family = "binomial", 
+    data = training)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9726  -0.6033  -0.4276  -0.2812   2.8504  
+
+Coefficients:
+                 Estimate Std. Error z value Pr(>|z|)    
+(Intercept)     -8.339198   0.760717 -10.962  < 2e-16 ***
+totChol          0.001897   0.001223   1.552 0.120766    
+male             0.573696   0.115996   4.946 7.58e-07 ***
+age              0.065972   0.007064   9.339  < 2e-16 ***
+education       -0.028970   0.052149  -0.556 0.578544    
+currentSmoker    0.036386   0.167796   0.217 0.828328    
+cigsPerDay       0.019489   0.006784   2.873 0.004071 ** 
+BPMeds           0.274272   0.251029   1.093 0.274574    
+prevalentStroke  0.848181   0.518642   1.635 0.101968    
+prevalentHyp     0.218051   0.147012   1.483 0.138017    
+diabetes         0.028427   0.334918   0.085 0.932358    
+sysBP            0.015017   0.004083   3.678 0.000235 ***
+diaBP           -0.003649   0.006873  -0.531 0.595521    
+BMI              0.010627   0.013647   0.779 0.436135    
+heartRate       -0.004844   0.004529  -1.069 0.284867    
+glucose          0.007142   0.002342   3.049 0.002295 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 2767.0  on 3199  degrees of freedom
+Residual deviance: 2435.1  on 3184  degrees of freedom
+AIC: 2467.1
+
+Number of Fisher Scoring iterations: 5

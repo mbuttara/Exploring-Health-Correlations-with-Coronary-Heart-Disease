@@ -1,0 +1,16 @@
+> library(caTools)
+> split <- sample.split(framingham, SplitRatio = 0.7)
+> 
+> train_cl <- subset(framingham, split == "TRUE")
+> test_cl <- subset(framingham, split == "FALSE")
+> 
+> train_scale <- scale(train_cl[c(1, 2, 3, 5, 10, 11, 15)])
+> test_scale <-  scale(test_cl[c(1, 2, 3, 5, 10, 11, 15)])
+> classifier_knn <- knn(train = train_scale,
++                       test = test_scale,
++                       cl = train_cl$TenYearCHD,
++                       k = 19)
+> 
+> misClassError <- mean(classifier_knn != test_cl$TenYearCHD)
+> print(paste('Accuracy =', 1-misClassError))
+[1] "Accuracy = 0.846760070052539"
